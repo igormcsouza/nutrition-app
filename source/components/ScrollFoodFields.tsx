@@ -10,23 +10,26 @@ const FoodField = ({ percentage, foodType }: FoodField) => (
     <View className="bg-emerald-500 p-2 rounded-md">
       <Text className="text-lg font-semibold text-white">{percentage}%</Text>
     </View> 
-    <Text className="text-lg">{foodType}</Text>
+    <Text className="text-lg capitalize">{foodType}</Text>
   </View>
 )
 
-const ScrollFoodFields = () => (
+export interface foodItem {
+  food: string,
+  percentage: number
+}
+
+interface ScrollFoodFields {
+  foodList: foodItem[]
+}
+
+const ScrollFoodFields = ({ foodList }: ScrollFoodFields) => (
   <ScrollView className="flex-1 flex-col mt-5 w-full" showsVerticalScrollIndicator={false} contentContainerStyle={{ alignItems: "center" }}>
-    <FoodField foodType="Vegetables" percentage={75} />
-    <FoodField foodType="Chicken" percentage={60} />
-    <FoodField foodType="Rice" percentage={30} />
-    <FoodField foodType="Rice" percentage={30} />
-    <FoodField foodType="Rice" percentage={30} />
-    <FoodField foodType="Rice" percentage={30} />
-    <FoodField foodType="Rice" percentage={30} />
-    <FoodField foodType="Rice" percentage={30} />
-    <FoodField foodType="Rice" percentage={30} />
-    <FoodField foodType="Rice" percentage={30} />
-    <FoodField foodType="Rice" percentage={30} />
+    {
+      foodList.map((foodItem) => (
+        <FoodField key={foodItem.food} foodType={foodItem.food} percentage={foodItem.percentage} />
+      ))
+    }
   </ScrollView>
 )
 
