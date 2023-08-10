@@ -17,6 +17,15 @@ Using [Nativewind](https://www.nativewind.dev/overview/) to build the applicatio
 
 Even though this project was done at [rocketseat](https://youtu.be/BYWHyKXhAn8) first, the entire application was done by me, I only took the style guide as inspiration.
 
+## Examples
+
+Those are some screenshots of the app running.
+
+<div style="display: flex; justify-content: center;">
+  <img src="docs/image-1.jpeg" alt="Image of the Style" style="width: 50%;">
+  <img src="docs/image-2.jpeg" alt="Image one example of the running app" style="width: 50%;">
+</div>
+
 ## Issues Found
 
 ### Initiate the project and run it with Expo Go
